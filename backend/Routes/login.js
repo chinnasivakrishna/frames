@@ -1,30 +1,19 @@
-const express = require("express")
-const { User } = require("../Models/Model")
-const cors = require("cors")
-
+const express = require('express');
+const { User } = require('../Models/Model');
 const login = express.Router();
-
-const app = express();
-app.use(cors({
-  origin:['https://frame-front-end.vercel.app'],
-  methods:['Post', 'Get'],
-  credentails: true,
-}))
 
 login.route("/login").post(async (req, res) => {
   const { userEmail, userPassword } = req.body;
   try {
-    const login = await User.findOne({ userEmail, userPassword });
-    console.log(login)
-    if (login) {
-      res.send({message:"login successfull"})
-    }
-    else {
-      res.json("Invalid Creditinals")
+    const user = await User.findOne({ userEmail, userPassword });
+    if (user) {
+      res.send({ message: "login successful" });
+    } else {
+      res.json("Invalid Credentials");
     }
   } catch (error) {
-    res.json({message:error})
+    res.json({ message: error });
   }
-})
+});
 
-module.exports = login
+module.exports = login;
