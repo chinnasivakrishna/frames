@@ -8,11 +8,11 @@ const Cardspage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
   const [data, setData] = useState([]);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://frame-api-five.vercel.app/user/fetch');
+        const response = await axios.get('https://frames-api-tau.vercel.app//user/fetch');
         setData(response.data.fetch);
         console.log(response.data.fetch);
       } catch (error) {

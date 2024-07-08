@@ -49,14 +49,14 @@ const RegisterForm = () => {
   };
 
   
-
+  axios.defaults.withCredentials = true;
   const register = async(e) => {
     console.log(data);
     e.preventDefault();
       if (validate()) {
     try {
       
-        const response = await axios.post("https://frame-api-five.vercel.app/user/register", data);
+        const response = await axios.post("https://frames-api-tau.vercel.app//user/register", data);
         if (response.data.message = "User added Successfull") {
           alert("Registeration Successfull");
         } else {
