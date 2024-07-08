@@ -1,0 +1,37 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgb(22, 23, 25); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10; 
+  }
+  
+  .header__logo {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .header__navbar {
+    display: flex;
+    gap: 40px;
+    font-size: 18px;
+    background-color: none;
+    font-weight: 500;
+    margin-right: 50px; 
+  }
+  
+  .header__navbar a {
+    color: #fff; 
+  }
+  
+  .header__navbar a:hover {
+    color: yellow;
+    font-weight: 700; 
+  }
+  
