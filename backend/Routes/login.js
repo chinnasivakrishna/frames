@@ -6,7 +6,7 @@ const login = express.Router();
 
 const app = express();
 app.use(cors({
-  origin:['https://frame-front-end.vercel.app'],
+  origin:['https://frames-front-end.vercel.app/'],
   methods:['Post', 'Get'],
   credentails: true,
 }))
