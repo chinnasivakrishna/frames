@@ -47,5 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy" : "https://frames-api-tau.vercel.app/"
+  "proxy" : "https://frames-api-tau.vercel.app"
 }
