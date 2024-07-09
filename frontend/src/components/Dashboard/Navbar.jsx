@@ -15,7 +15,7 @@ export default function SimpleSlider() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://frames-api-tau.vercel.app//user/fetch');
+        const response = await axios.get('https://frames-api-tau.vercel.app/user/fetch');
         setData(response.data.fetch);
         console.log(response.data.fetch);
       } catch (error) {

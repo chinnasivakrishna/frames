@@ -15,11 +15,14 @@ const cors = require("cors")
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({
-  origin:'*',
-  methods:['POST', 'GET'],
-  credentails: true,
-}))
+app.use(function (req, res, next) {
+    //Enabling CORS
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, 
+    Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+      next();
+    });
 const DB_URL = process.env.MONGO_URL;
 
 mongoose.connect(DB_URL, {
